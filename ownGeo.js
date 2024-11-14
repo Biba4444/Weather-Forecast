@@ -15,7 +15,7 @@ export const personalGeo = async () => {
             const { name } = data;
             console.log(`Location name: ${name}`);
 
-            const urlName = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
+            const urlName = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
 
             console.log(`City Geo URL: ${urlName}`);
             resolve(urlName);

@@ -25,7 +25,7 @@ applyCity.addEventListener("click", async event => {
   event.preventDefault();
   const inputValue = cityInput.value.trim().toLowerCase();
 
-  url = `http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
+  url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
   console.log("Updated URL:", url);
 
   try {

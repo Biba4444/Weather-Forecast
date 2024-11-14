@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Report</title>
+  </head>
+  <body>
+    <div id="app">
+      <form type="submit">
+        <input
+          type="text"
+          placeholder="City, which weather you wanna see"
+          id="cityInput"
+        />
+        <button id="applyCity" type="submit">Submit</button>
+      </form>
+      <section class="cardSection">
+        <section class="headerSection">
+          <div id="cityName"></div>
+          <div id="time"></div>
+          <div id="temp"></div>
+          <div id="feelsTemp"></div>
+          <div id="pressure"></div>
+        </section>
+        <div class="firstContainer">
+          <div class="upperCard"></div>
+          <section class="weatherSection">
+            <img
+              id="weatherIcon"
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="Weather Icon"
+            />
+            <div id="mainWeather"></div>
+            <div id="weathDesc"></div>
+          </section>
+        </div>
+      </section>
+      <section id="data-section">
+        <div id="data-container"></div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

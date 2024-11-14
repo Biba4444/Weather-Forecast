@@ -4,7 +4,6 @@ export const personalGeo = async () => {
       navigator.geolocation.getCurrentPosition(
         async position => {
           const { latitude, longitude } = position.coords;
-          console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 
           const personalUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a1060c908bea315aba0920d1cd09a732`;
 
@@ -13,11 +12,9 @@ export const personalGeo = async () => {
             const data = await response.json();
 
             const { name } = data;
-            console.log(`Location name: ${name}`);
 
             const urlName = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
 
-            console.log(`City Geo URL: ${urlName}`);
             resolve(urlName);
           } catch (error) {
             console.error(`Error fetching weather data: ${error}`);

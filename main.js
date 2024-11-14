@@ -13,7 +13,6 @@ const coordinates = {};
 (async () => {
   try {
     url = await personalGeo();
-    console.log(`Returned URL: ${url}`);
     const geoData = await request();
     handleGeoData(geoData);
   } catch (error) {
@@ -26,7 +25,6 @@ applyCity.addEventListener("click", async event => {
   const inputValue = cityInput.value.trim().toLowerCase();
 
   url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=1&appid=a1060c908bea315aba0920d1cd09a732`;
-  console.log("Updated URL:", url);
 
   try {
     const geoData = await request();
@@ -47,21 +45,15 @@ const request = async () => {
 };
 
 const handleGeoData = async geoData => {
-  console.log("Geo Data:", geoData);
-
   if (geoData.length > 0) {
     weathCoordinates(geoData);
     url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=a1060c908bea315aba0920d1cd09a732`;
-    console.log("Weather URL:", url2);
     urlEvrDay = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=a1060c908bea315aba0920d1cd09a732`;
-    console.log("EvrDayurl:", urlEvrDay);
 
     try {
       const weatherData = await requestWeather();
-      console.log("Weather Data:", weatherData);
       weathForc(weatherData);
       const evrDayWeather = await requestEvrDayForecast();
-      console.log("EvrDayWeath:", evrDayWeather);
       evrDayForecast(evrDayWeather);
     } catch (error) {
       console.error("Error fetching weather data:", error);
@@ -176,5 +168,4 @@ const evrDayForecast = data => {
 
     container.appendChild(block);
   });
-  console.log(sortedInfo);
 };

@@ -1,8 +1,11 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "./",
+  base: "/Weather-Forecast/",
 
+  build: {
+    outDir: "dist",
+  },
   server: {
     open: true,
     cors: true,
